@@ -1,0 +1,43 @@
+{% extends 'teachers_dashboard/index.html' %}
+
+{% block notice_create %}
+<div class="content-wrapper ">
+
+<section class="content add_teacher">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-6">
+          <!-- general form elements -->
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">Add Notices</h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form action="add_notice" method="POST">
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Title</label>
+                  <input type="text" name="notice_title" class="form-control" id="exampleInputEmail1" placeholder="Exam on tomarrow">
+                </div>
+               
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Link</label>
+                    <input type="text"  name="notice_link"  class="form-control" id="exampleInputEmail1" placeholder="eg. https://www.google.com/exam_timetable">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Discription</label>
+                    <input type="text"  name="notice_dis"  class="form-control" id="exampleInputEmail1" placeholder="eg. Exam on Java">
+                  </div>
+              <!-- /.card-body -->
+
+              <div class="card-footer text-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+          </div>
+          <!-- /.card -->
+
+  {% endblock notice_create %}

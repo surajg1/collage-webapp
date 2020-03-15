@@ -1,0 +1,38 @@
+{% extends 'admin_dashboard/index.html' %}
+
+{% block slink_create %}
+<div class="content-wrapper ">
+
+<section class="content add_teacher">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-6">
+          <!-- general form elements -->
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">Add S-Link</h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form action="add_slink" method="POST">
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Name</label>
+                  <input type="text" name="slink_name" class="form-control" id="exampleInputEmail1" placeholder="Enter Name">
+                </div>
+               
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Link</label>
+                    <input type="text"  name="link"  class="form-control" id="exampleInputEmail1" placeholder="eg. https://www.google.com/">
+                  </div>
+              <!-- /.card-body -->
+
+              <div class="card-footer text-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+          </div>
+          <!-- /.card -->
+
+  {% endblock slink_create %}

@@ -1,0 +1,273 @@
+body{
+  overflow-x: hidden;
+}
+.img-logo{
+    width: 80px;
+    height: 80px;
+    margin-left: -2rem;
+
+}
+
+
+
+.drop{
+    color: blue;
+}
+
+.vl {
+    position: absolute;
+    border-left: 1px solid rgba(0, 0, 0, 0.644);
+    height: 90px;
+    left: 6rem;
+  }
+
+.myClass{
+    position: relative;
+    left: 10%;
+}
+.collage-name{
+    position: relative;
+    left: 50px;
+    bottom:4rem;
+    margin-bottom: 1rem;
+}
+
+.navbar{
+    position: absolute;
+    height: 90px;
+}
+
+.photo{
+    margin-top: 4rem;
+}
+
+.list{
+    padding: auto;
+    margin-top: 2rem;
+    margin-right: 3rem;
+}
+.bgc{
+    /* background-image: url('{{ STATIC_URL }}dist/img/bgc.jpg'); */
+    background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+    background-attachment:fixed;
+}
+
+@media screen and (max-width: 800px) {
+    .left, .main, .right {
+      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    }
+    .collage-name{
+        position: absolute;
+        left: 50px;
+        top:5rem;
+        /* margin-bottom: 1rem; */
+    }
+    
+}
+
+.carousel-item {
+    height: 100vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+.items{
+    color: aliceblue;
+    font-size: larger;
+}
+  .pune
+  {
+    color: white;
+  }
+  .address
+  {
+    color:white;
+   
+  }
+  .special
+  {
+    color:white;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .welcome
+  {
+    color: black;
+    font-family: arial;
+    font-size:18px;
+     margin-left: 163px;
+   
+  }
+  .welcometext
+  {
+    word-wrap:break-word;
+    margin-left: 163px;
+    margin-top: -28px;
+    font-size: 21px;
+  
+  }
+  .aboutpdea
+  {
+   
+    word-wrap:inherits;
+    margin-left: 163px;
+    margin-top: -28px;
+    font-size: 21px;
+  
+  
+  }
+  #sharadpawar
+  {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: -885px;
+    margin-top: 9px;
+  }
+  #sharadpawartext
+  {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 09px;
+    font-weight: bold;
+   margin-left: -888px;
+    margin-top: 11px; 
+  }
+  #ajitpawar
+  {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: -293px;
+    margin-top: -129px
+  }
+  #ajitpawartext
+  {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    font-weight: bold;
+    margin-left: -289px;
+    margin-top: 15px;
+  }
+  #supriya
+  {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 310px;
+    margin-top: -103px
+  }
+  #supriyatext
+  {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    margin-left: 296px;
+  }
+  #sunetra
+  {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 700px;
+    margin-top: -114px;
+    margin-right: -208px;
+  }
+  #sunetratext
+  {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    margin-left: 721px;
+    margin-right: -159px;
+  }
+  .uniname
+  {
+    font-family: Arial;
+    color: gray;
+    font-size: 22px;
+    margin-right: 319px;
+    margin-left: -245px;
+  }
+  .pdeaname
+  {
+    font-family: Arial;
+    color: gray;
+    font-size: 22px;
+    margin-left: 181px;
+    margin-right: -319px;
+    margin-top: -65px;
+  }
+  .Chief-Patron
+  {
+    font-family: Arial;
+    
+    font-size: 34px;
+    
+    
+  }
+  .t
+  {
+    color: white;
+  }
+  .event
+  {
+    color:grey;
+  }
+  #gholapimage
+  {
+   border-radius: 45px;
+   margin-left:67px;
+   
+  }
+
+h15{
+    position: relative;
+    font-size:4rem;
+    color:  #FF1361 67%, #FFF800 100%;
+    margin: 1rem;
+    font-family: serif;
+}
+.notice-board{
+    position: absolute;
+    margin-top: 4px;
+    margin-bottom: 25px;
+    max-width: 5px;
+}
+
+.item-list{
+    color: black;
+}
+.myNav{
+  color: white; 
+}
+
+.paragraph{
+  font-family: cursive;
+  font-size: 35px;
+  margin-left: 5px;
+  color: rgb(148, 138, 138);
+}  
+.whole{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  /* left: 50%; */
+}
+
+footer{
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}

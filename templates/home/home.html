@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+
+<head>
+  <title>Computer Science Department</title>
+ 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'sir/css/open-iconic-bootstrap.min.css' %}">
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css' %}">
+  <link rel="stylesheet" href="{% static 'sir/css/animate.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/icheck-bootstrap/icheck-bootstrap.min.css' %}">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}">
+  <link rel="stylesheet" href="{% static 'sir/css/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{% static 'sir/css/owl.theme.default.min.css' %}">
+  <link rel="stylesheet" href="{% static 'sir/css/magnific-popup.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="icon" type="image/png" href="{% static 'contact/images/icons/favicon.ico' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'contact/fonts/Linearicons-Free-v1.0.0/icon-font.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'contact/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'contact/vendor/animate/animate.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'contact/vendor/css-hamburgers/hamburgers.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'contact/vendor/animsition/css/animsition.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'contact/vendor/select2/select2.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'contact/vendor/daterangepicker/daterangepicker.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'contact/css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'contact/css/main.css' %}">
+  <link rel="stylesheet" href="{% static 'sir/css/aos.css' %}">
+  <link rel="stylesheet" href="{% static 'sir/css/ionicons.min.css' %}">
+  <link rel="stylesheet" href="{% static 'sir/css/bootstrap-datepicker.css' %}">
+  <link rel="stylesheet" href="{% static 'sir/css/jquery.timepicker.css' %}">
+  <link rel="stylesheet" href="{% static 'sir/css/flaticon.css' %}">
+  <link rel="stylesheet" href="{% static 'sir/css/icomoon.css' %}">
+  <link rel="stylesheet" href="{% static 'sir/css/style.css' %}">
+</head>
+
+<body>
+  
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-dark" id="ftco-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="/"><i class="flaticon-university"></i>Computer <br><small>Science</small></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> Menu
+      </button>
+
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item "><a href="/" class=" nav-link " style="color: aliceblue;">Home</a></li>
+          <li class="nav-item"><a href="about" class="nav-link" style="color: aliceblue;">About</a></li>
+          <li class="nav-item"><a href="Course" class="nav-link" style="color: aliceblue;">Course</a></li>
+          <li class="nav-item"><a href="Infrastructure" class="nav-link" style="color: aliceblue;">Infrastructure</a></li>
+          <li class="nav-item"><a href="staff" class="nav-link" style="color: aliceblue;">Faculty</a></li>
+          <li class="nav-item"><a href="/" class="nav-link" style="color: aliceblue;">Placement</a></li>
+          <li class="dropdown nav-item bg-dark">
+            <a class="dropdown-toggle nav-link" style="color: aliceblue;" data-toggle="dropdown" href="#">Student Corner
+            <span class="caret"></span></a>
+            <ul class="dropdown-menu bg-dark">
+              <li class="text-center" ><a href="ebook" style="color: aliceblue;">E-books</a></li>
+              <li class="text-center"><a href="#" style="color: aliceblue;">Events</a></li>
+              <li class="text-center"><a href="slinkcourse" style="color: aliceblue;">S-Link Courses</a></li>
+              <li class="text-center"><a href="#" style="color: aliceblue;">Class timetable</a></li>
+
+              <!-- <li class="m-1"><a href="#">Page 1-3</a></li> -->
+            </ul>
+          </li>
+          <li class="nav-item"><a href="contact" class="nav-link" style="color: aliceblue;">Contact Us</a></li>
+
+          <li class="nav-item cta"><a href="login" class="nav-link" style="color: aliceblue;"><span style="color: aliceblue;">Login</span></a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- END nav -->
+
+{% block main %}{% endblock main %}
+{% block about %}{% endblock about %}
+{% block staff %}{% endblock staff %}
+{% block contact %}{% endblock contact %}
+{% block classtt %}{% endblock classtt %}
+{% block ebook %}{% endblock ebook %}
+{% block slink %}{% endblock slink %}
+{% block login %}{% endblock login %}
+
+</div>
+  
+
+<!-- Footer -->
+<footer class="page-footer font-small cyan darken-3 bg-dark text-center">
+
+  <!-- Footer Elements -->
+  <div class="container">
+
+    <!-- Grid row-->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-12 py-5">
+        <div class="mb-5 flex-center">
+
+          <!-- Facebook -->
+          <a href="https://www.facebook.com/BaburaojiGholapCollege/?rf=1392968387608681" class="fb-ic">
+            <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!-- Twitter -->
+          <a class="tw-ic">
+            <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!-- Google +-->
+          <a class="gplus-ic">
+            <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!--Linkedin -->
+          <a href="https://www.linkedin.com/school/baburaoji-gholap-college/about/" class="li-ic">
+            <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!--Instagram-->
+          <a href="https://www.instagram.com/im_suraj_g/" class="ins-ic">
+            <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!--Pinterest-->
+          <a class="pin-ic">
+            <i class="fab fa-pinterest fa-lg white-text fa-2x"> </i>
+          </a>
+        </div>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+
+  </div>
+  <!-- Footer Elements -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://mdbootstrap.com/education/bootstrap/"> @bgc</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+  
+</body>
+  <script src="{{STATIC_URL}} /static/sir/js/jquery.min.js"></script>
+  <script src="{{STATIC_URL}} /static/sir/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="{{STATIC_URL}} /static/sir/js/popper.min.js"></script>
+  <script src="{{STATIC_URL}} /static/sir/js/bootstrap.min.js"></script>
+  <script src="{{STATIC_URL}} /static/sir/js/jquery.easing.1.3.js"></script>
+  <script src="{{STATIC_URL}} /static/sir/js/jquery.waypoints.min.js"></script>
+  <script src="{{STATIC_URL}} /static/sir/js/jquery.stellar.min.js"></script>
+  <script src="{{STATIC_URL}} /static/sir/js/owl.carousel.min.js"></script>
+  <script src="{{STATIC_URL}} /static/sir/js/jquery.magnific-popup.min.js"></script>
+  <script src="{{STATIC_URL}} /static/sir/js/aos.js"></script>
+  <script src="{{STATIC_URL}} /static/sir/js/jquery.animateNumber.min.js"></script>
+  <script src="{{STATIC_URL}} /static/sir/js/bootstrap-datepicker.js"></script>
+  <script src="{{STATIC_URL}} /static/sir/js/jquery.timepicker.min.js"></script>
+  <script src="{{STATIC_URL}} /static/sir/js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="{{STATIC_URL}} /static/sir/js/main.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+  <script src="{{STATIC_URL}} /static/contact/vendor/animsition/js/animsition.min.js"></script>
+	<script src="{{STATIC_URL}} /static/contact/vendor/bootstrap/js/popper.js"></script>
+	<script src="{{STATIC_URL}} /static/contact/vendor/select2/select2.min.js"></script>
+	<script src="{{STATIC_URL}} /static/contact/vendor/daterangepicker/moment.min.js"></script>
+	<script src="{{STATIC_URL}} /static/contact/vendor/daterangepicker/daterangepicker.js"></script>
+	<script src="{{STATIC_URL}} /static/contact/vendor/countdowntime/countdowntime.js"></script>
+	<script src="{{STATIC_URL}} /static/contact/js/map-custom.js"></script>
+	<script src="{{STATIC_URL}} /static/contact/js/main.js"></script>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-23581568-13');
+  </script>
+  <script>
+    (function () {
+      $('a.nav-item ').on('click', function (e) {
+        e.preventDefault();
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+          scrollTop: $($anchor.attr('href')).offset().top
+        }, 1500, 'easeInOutExpo');
+      });
+    }());
+  </script>
+
+

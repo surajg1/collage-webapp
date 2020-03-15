@@ -1,0 +1,8 @@
+body{
+    overflow-x: hidden;
+  } 
+.add_teacher{
+    position: relative;
+    left: 20%;
+    top: 1rem;
+}

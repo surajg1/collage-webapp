@@ -1,0 +1,51 @@
+{% extends 'admin_dashboard/index.html' %}
+
+{% block teacher_create %}
+<div class="content-wrapper ">
+
+<section class="content add_teacher">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-6">
+          <!-- general form elements -->
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">Add Teachers</h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form action="/update_teacher" method="POST">
+              {% csrf_token %}
+              {% for teach in Teachear %}
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Name</label>
+                  <input type="hidden" name="t_id" class="form-control" value = {{ teach.id }} id="exampleInputEmail1" placeholder="Enter Name">
+                  <input type="text" name="name" class="form-control" value = {{ teach.teacher_name }} id="exampleInputEmail1" placeholder="Enter Name">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email</label>
+                    <input type="email" name="email" class="form-control" value= {{ teach.teacher_email }} id="exampleInputEmail1" placeholder="Enter email">
+                  </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" name="password" class="form-control" value= {{ teach.teacher_password }} id="exampleInputPassword1" placeholder="Enter Password">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Qualification</label>
+                    <input type="text"  name="qualification" value= {{ teach.teacher_qualification }} class="form-control" id="exampleInputEmail1" placeholder="Enter Qualification">
+
+                  </div>
+                  {% endfor %}
+         
+              <!-- /.card-body -->
+
+              <div class="card-footer text-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+          </div>
+          <!-- /.card -->
+
+  {% endblock teacher_create %}

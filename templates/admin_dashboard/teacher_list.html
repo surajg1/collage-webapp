@@ -1,0 +1,44 @@
+{% extends 'admin_dashboard/index.html' %}
+
+{% block teacher_list %}
+
+<div class="content-wrapper">
+    <h1 class="m-1 text-center center"> Teachers </h1>
+
+    
+<table class="table m-2">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">E-Mail</th>
+        <th scope="col">Password</th>
+        <th scope="col">Qualification</th>
+        <th scope="col">Action</th>
+
+
+
+      </tr>
+    </thead>
+    <tbody>
+        {% for list in teacher_list %}
+      <tr>
+
+        <th scope="row">{{ forloop.counter }}</th>
+        <td>{{ list.teacher_name }}</td>
+        <td>{{ list.teacher_email }}</td>
+        <td>{{ list.teacher_password }}</td>
+        <td>{{ list.teacher_qualification }}</td>
+        
+        <td> <a href="delete_teacher/{{ list.id }}"> <button class="btn btn-danger"> Delete </button></a>
+           <a href="edit_teacher/{{ list.id }}">  <button class="btn btn-warning"> Update </button></a>
+             </td>
+    </tr>
+    {% endfor %}
+      
+    </tbody>
+  </table>
+  </div>
+  
+  
+{% endblock teacher_list %}
