@@ -57,13 +57,19 @@
   <br>
 </div>
 <div class="col-xs-4 col-md-3 notice-board bg-light">
+
   <h15 class="text-center">Notice</h15>
   
-  <ul class="item-list">
+  <ul class="list-group">
     {% for noti in notice %}
-    <li >{{ noti.title }}</li>
+    <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
+      {{ noti.title }}
+      <span class="badge badge-success badge-pill">New </span>
+    </li>
     {% endfor %}        
   </ul>
+
+
 </div>
 </div>
 </div>
@@ -85,6 +91,7 @@
   </div>
     <br><br>
 </div>
+
 
 <!-- ksdjhfn -->
 {% endblock main %}

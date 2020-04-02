@@ -21,6 +21,9 @@
   <link rel="stylesheet" href="{% static 'sir/css/owl.theme.default.min.css' %}">
   <link rel="stylesheet" href="{% static 'sir/css/magnific-popup.css' %}">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.scss' %}">
+  <link rel="stylesheet" href="{% static 'css/agency.min.css' %}">
+
 	<link rel="icon" type="image/png" href="{% static 'contact/images/icons/favicon.ico' %}"/>
   <link rel="stylesheet" type="text/css" href="{% static 'contact/fonts/Linearicons-Free-v1.0.0/icon-font.min.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'contact/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
@@ -52,8 +55,8 @@
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item "><a href="/" class=" nav-link " style="color: aliceblue;">Home</a></li>
-          <li class="nav-item"><a href="about" class="nav-link" style="color: aliceblue;">About</a></li>
-          <li class="nav-item"><a href="Course" class="nav-link" style="color: aliceblue;">Course</a></li>
+          <li class="nav-item"><a href="/about" class="nav-link" style="color: aliceblue;">About</a></li>
+          <li class="nav-item"><a href="/course" class="nav-link" style="color: aliceblue;">Course</a></li>
           <li class="nav-item"><a href="Infrastructure" class="nav-link" style="color: aliceblue;">Infrastructure</a></li>
           <li class="nav-item"><a href="staff" class="nav-link" style="color: aliceblue;">Faculty</a></li>
           <li class="nav-item"><a href="/" class="nav-link" style="color: aliceblue;">Placement</a></li>
@@ -71,14 +74,16 @@
           </li>
           <li class="nav-item"><a href="contact" class="nav-link" style="color: aliceblue;">Contact Us</a></li>
 
-          <li class="nav-item cta"><a href="login" class="nav-link" style="color: aliceblue;"><span style="color: aliceblue;">Login</span></a></li>
+          <li class="nav-item cta"><a href="/user_login" class="nav-link" style="color: aliceblue;"><span style="color: aliceblue;">Login</span></a></li>
           
         </ul>
       </div>
     </div>
   </nav>
   <!-- END nav -->
+  
 
+  
 {% block main %}{% endblock main %}
 {% block about %}{% endblock about %}
 {% block staff %}{% endblock staff %}
@@ -87,8 +92,7 @@
 {% block ebook %}{% endblock ebook %}
 {% block slink %}{% endblock slink %}
 {% block login %}{% endblock login %}
-
-</div>
+{% block courses %} {% endblock courses %}
   
 
 <!-- Footer -->
@@ -192,6 +196,14 @@
         }, 1500, 'easeInOutExpo');
       });
     }());
+  </script>
+
+    <script>
+  $(document).ready(function(){
+    setTimeout(()=>{
+  $('.alert').hide();
+    },3000)
+});
   </script>
 
 

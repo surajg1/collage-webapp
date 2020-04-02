@@ -153,6 +153,11 @@
           <i class="fas fa-th-large"></i>
         </a>
       </li>
+      <li>
+        {% if request.session.TeacherLogin %}
+        <a href="/user_logout"><button class="btn btn-danger"> Logout </button></a>
+        {% endif %}
+      </li>
     </ul>
   </nav>
   <!-- /.navbar -->
@@ -174,7 +179,7 @@
           <img src="{{STATIC_URL}} /static/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="manage_d" class="d-block">Suraj Gholap</a>
+          <a href="/manage_d" class="d-block">{{ request.session.admin_name }}</a>
         </div>
       </div>
 
@@ -184,7 +189,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview menu-open">
-            <a href="manage_d" class="nav-link active">
+            <a href="/manage_d" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -210,14 +215,14 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="teachers_create" class="nav-link">
+                <a href="/teachers_create" class="nav-link">
                   <i class="nav-icon fas fa-user-plus"></i>
 
                   <p>Add Teachers</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="teachers_list" class="nav-link">
+                <a href="/teachers_list" class="nav-link">
                   <i class="nav-icon fas fa-users"></i>
 
                   <p>Teachers</p>
@@ -235,14 +240,14 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="slink_create" class="nav-link">
+                    <a href="/slink_create" class="nav-link">
                       <i class="nav-icon fas fa-user-plus"></i>
     
                       <p>Add Slink</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="slink_list" class="nav-link">
+                    <a href="/slink_list" class="nav-link">
                       <i class="nav-icon fas fa-users"></i>
                       <p>S-Links</p>
                     </a>

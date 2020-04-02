@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 # from common.models import Admin
 from  .models import Teacher
 from  .models import Admin
@@ -11,6 +11,8 @@ from django.http import HttpResponseRedirect
 
 # Create your views here.
 
+AdminLogin = False 
+TeacherLogin = False
 class HomeView:
     def home(request):
         notice = Notice.objects.all()
@@ -19,7 +21,7 @@ class HomeView:
         })
         
     def login(request):
-            return render(request,'auth/login.html')
+        return render(request,'auth/login.html')
 
     def dashboard(request):
         return render(request,'dashborad.html')
@@ -28,7 +30,10 @@ class HomeView:
         return render(request,'home/About_us.html')
 
     def staff(request):
-        return render(request,'home/Staff.html')
+        teacher_list = Teacher.objects.all()
+        return render(request,'home/Staff.html',{
+                "teacher_list" : teacher_list
+            })
 
     def contact(request):
         return render(request,'home/contact.html')
@@ -48,45 +53,69 @@ class HomeView:
             "slink_list" : slink_list
         })
 
-    def teachers_manage(request):
-        return render(request,'teachers_dashboard/dashborad.html')        
+
 
 # Changes in Admin Dashboard 
 
 
 class AdminView:
     def teachers_list(request):
-        teacher_list = Teacher.objects.all()
-        return render(request,'admin_dashboard/teacher_list.html',{
-            "teacher_list" : teacher_list
-        })
+        Login = request.session['AdminLogin']
+        if(Login == 'False'):
+           return HttpResponseRedirect("/user_login")
+        else:
+            teacher_list = Teacher.objects.all()
+            return render(request,'admin_dashboard/teacher_list.html',{
+                "teacher_list" : teacher_list
+            })
 
     def teachers_create(request):
-        return render(request,'admin_dashboard/teachers_create.html')
+        Login = request.session['AdminLogin']
+        if(Login == 'False'):
+           return HttpResponseRedirect("/user_login")
+        else:
+            return render(request,'admin_dashboard/teachers_create.html')
 
     @csrf_exempt
     def add_teachers(request):
-        name = request.POST['name']
-        email= request.POST['email']
-        password= request.POST['password']
-        qualification= request.POST['qualification']
-        admin_id = Admin.objects.get(id= 1);
-        result = Teacher.objects.create(teacher_name = name,teacher_email = email, teacher_password = password, teacher_qualification = qualification, admin = admin_id)
-        return HttpResponseRedirect("/teachers_list")    
+        Login = request.session['AdminLogin']
+        if(Login == 'False'):
+           return HttpResponseRedirect("/user_login")
+        else:
+            name = request.POST['name']
+            email= request.POST['email']
+            password= request.POST['password']
+            qualification= request.POST['qualification']
+            admin_id = Admin.objects.get(id= 1)
+            result = Teacher.objects.create(teacher_name = name,teacher_email = email, teacher_password = password, teacher_qualification = qualification, admin = admin_id)
+            return HttpResponseRedirect("/teachers_list")    
 
     def manage_d(request):
-        return render(request,'admin_dashboard/admin_dashboard.html')  
+        Login = request.session['AdminLogin']
+        if(Login == 'False'):
+           return HttpResponseRedirect("/user_login")
+        else:
+            return render(request,'admin_dashboard/admin_dashboard.html')
+        
 
     @csrf_exempt
     def delete_teacher(request,id):
-        Teacher.objects.get(id= id).delete()
-        return HttpResponseRedirect("/teachers_list")    
+        Login = request.session['AdminLogin']
+        if(Login == 'False'):
+           return HttpResponseRedirect("/user_login")
+        else:
+            Teacher.objects.get(id= id).delete()
+            return HttpResponseRedirect("/teachers_list")    
 
     def edit_teacher(request, id):
-        tach = Teacher.objects.filter(pk = id)
-        return render(request,'admin_dashboard/teachers_edit.html',{
-            "Teachear" : tach
-                }) 
+        Login = request.session['AdminLogin']
+        if(Login == 'False'):
+           return HttpResponseRedirect("/user_login")
+        else:
+            tach = Teacher.objects.filter(pk = id)
+            return render(request,'admin_dashboard/teachers_edit.html',{
+                "Teachear" : tach
+                    }) 
       
     @csrf_exempt  
     def update_teacher(request):
@@ -100,32 +129,52 @@ class AdminView:
     
     @csrf_exempt
     def add_slink(request):
-        link_name = request.POST['slink_name']
-        link = request.POST['link']            
-        admin_id = Admin.objects.get(id= 1);
-        Slink.objects.create(link_name = link_name,link = link, admin = admin_id)
-        return HttpResponseRedirect("slink_list") 
+        Login = request.session['AdminLogin']
+        if(Login == 'False'):
+           return HttpResponseRedirect("/user_login")
+        else:
+            link_name = request.POST['slink_name']
+            link = request.POST['link']            
+            admin_id = Admin.objects.get(id= 1);
+            Slink.objects.create(link_name = link_name,link = link, admin = admin_id)
+            return HttpResponseRedirect("slink_list") 
     
     def slink_create(request):
-        return render(request,'admin_dashboard/slink_create.html')
+        Login = request.session['AdminLogin']
+        if(Login == 'False'):
+           return HttpResponseRedirect("/user_login")
+        else:
+            return render(request,'admin_dashboard/slink_create.html')
     
     def slink_list(request):
-        slink_list = Slink.objects.all()
-        return render(request,'admin_dashboard/slink_list.html',{
-            "slink_list" : slink_list
-        })
+        Login = request.session['AdminLogin']
+        if(Login == 'False'):
+           return HttpResponseRedirect("/user_login")
+        else:
+            slink_list = Slink.objects.all()
+            return render(request,'admin_dashboard/slink_list.html',{
+                "slink_list" : slink_list
+            })
     
     @csrf_exempt   
     def delete_slink(request, id):
-        Slink.objects.get(id= id).delete()
-        return HttpResponseRedirect("/slink_list")
+        Login = request.session['AdminLogin']
+        if(Login == 'False'):
+           return HttpResponseRedirect("/user_login")
+        else:
+            Slink.objects.get(id= id).delete()
+            return HttpResponseRedirect("/slink_list")
     
 
 # Changes in Teacher Dashboard 
     
 class TeachersView:
     def notice_create(request):
-       return render(request,'teachers_dashboard/notice_create.html')
+         Login = request.session['TeacherLogin']
+         if(Login == 'False'):
+            return HttpResponseRedirect("/user_login")
+         else:
+            return render(request,'teachers_dashboard/notice_create.html')
    
     @csrf_exempt
     def add_notice(request):
@@ -139,9 +188,13 @@ class TeachersView:
 
     def notice_list(request):
         notice_list = Notice.objects.all()
-        return render(request,'teachers_dashboard/notice_list.html',{
+        Login = request.session['TeacherLogin']
+        if(Login == 'False'):
+           return HttpResponseRedirect("/user_login")
+        else:
+            return render(request,'teachers_dashboard/notice_list.html',{
             "notice_list" : notice_list
-        })
+             })
         
     def delete_notice(request, id):
         Notice.objects.get(id= id).delete()
@@ -149,7 +202,11 @@ class TeachersView:
 
     def edit_notice(request, id):
         noti = Notice.objects.filter(pk = id)
-        return render(request,'teachers_dashboard/edit_notice.html',{
+        Login = request.session['TeacherLogin']
+        if(Login == 'False'):
+            return HttpResponseRedirect("/user_login")
+        else:
+            return render(request,'teachers_dashboard/edit_notice.html',{
             "Notice" : noti
                 })
         
@@ -163,12 +220,20 @@ class TeachersView:
     
     def ebook_list(request):
          ebook_list = Ebook.objects.all()
-         return render(request,'teachers_dashboard/ebook_list.html',{
+         Login = request.session['TeacherLogin']
+         if(Login == 'False'):
+            return HttpResponseRedirect("/user_login")
+         else:
+            return render(request,'teachers_dashboard/ebook_list.html',{
             "ebook_list" : ebook_list
          })
           
     def ebook_create(request):
-        return render(request,'teachers_dashboard/ebook_create.html')
+        Login = request.session['TeacherLogin']
+        if(Login == 'False'):
+            return HttpResponseRedirect("/user_login")
+        else:
+            return render(request,'teachers_dashboard/ebook_create.html')
     
     @csrf_exempt
     def add_ebook(request):
@@ -181,3 +246,56 @@ class TeachersView:
     def delete_ebook(request, id):
         Ebook.objects.get(id= id).delete()
         return HttpResponseRedirect("/ebook_list")
+    
+class Auth:
+    @csrf_exempt
+    def att_user_login(request):
+        enter_email = request.POST['email']
+        enter_password = request.POST['password']
+        try:
+            original_password = Teacher.objects.get(teacher_email = enter_email) 
+            if(enter_password == original_password.teacher_password):
+                request.session['TeacherLogin'] = 'True'
+                request.session['user_name'] = original_password.teacher_name
+                request.session['login_error'] = 'False'
+                return HttpResponseRedirect("/teachers_manage")
+            else:
+                request.session['TeacherLogin'] = 'False'
+                request.session['login_error'] = 'True'
+                return HttpResponseRedirect("/user_login")
+            
+        except Teacher.DoesNotExist:
+            request.session['TeacherLogin'] = 'False'
+            request.session['login_error'] = 'True'
+            try:
+                original_password = Admin.objects.get(a_email = enter_email) 
+                if(enter_password == original_password.a_password):
+                    request.session['AdminLogin'] = 'True'
+                    request.session['admin_name'] = original_password.a_name
+                    request.session['login_error'] = 'False'
+                    return HttpResponseRedirect("/manage_d")
+                else:
+                    request.session['TeacherLogin'] = 'False'
+                    request.session['login_error'] = 'True'
+                    return HttpResponseRedirect("/user_login")
+            except Admin.DoesNotExist:
+                request.session['AdminLogin'] = 'False'
+                request.session['TeacherLogin'] = 'False'
+                request.session['login_error'] = 'True'
+                return HttpResponseRedirect("/user_login")
+            return HttpResponseRedirect("/user_login")
+                
+
+    def teachers_manage(request):
+        Login = request.session['TeacherLogin']
+        if(Login == 'False'):
+            return HttpResponseRedirect("/user_login")
+        else:
+            return render(request,'teachers_dashboard/dashborad.html')
+        
+    def user_logout(request):
+        request.session['TeacherLogin'] = 'False'
+        request.session['user_name'] = ''
+        request.session['AdminLogin'] = 'False'
+        request.session['admin_name'] = ''
+        return HttpResponseRedirect("/user_login")

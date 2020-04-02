@@ -1,229 +1,98 @@
-<!-- {% extends 'home/home.html' %} -->
-<!-- {% block staff %} -->
+{% extends 'home/home.html' %}
 
-{% load static %}
 
-<head>
-  <title>International Conference</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-  <link rel="stylesheet" href="{% static 'sir/css/open-iconic-bootstrap.min.css' %}">
-  <link rel="stylesheet" href="{% static 'sir/css/animate.css' %}">
-  <link rel="stylesheet" href="{% static 'sir/css/owl.carousel.min.css' %}">
-  <link rel="stylesheet" href="{% static 'sir/css/owl.theme.default.min.css' %}">
-  <link rel="stylesheet" href="{% static 'sir/css/magnific-popup.css' %}">
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
-	<link rel="icon" type="image/png" href="{% static 'contact/images/icons/favicon.ico' %}"/>
-  <link rel="stylesheet" type="text/css" href="{% static 'contact/fonts/Linearicons-Free-v1.0.0/icon-font.min.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'contact/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'contact/vendor/animate/animate.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'contact/vendor/css-hamburgers/hamburgers.min.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'contact/vendor/animsition/css/animsition.min.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'contact/vendor/select2/select2.min.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'contact/vendor/daterangepicker/daterangepicker.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'contact/css/util.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'contact/css/main.css' %}">
-  <link rel="stylesheet" href="{% static 'sir/css/aos.css' %}">
-  <link rel="stylesheet" href="{% static 'sir/css/ionicons.min.css' %}">
-  <link rel="stylesheet" href="{% static 'sir/css/bootstrap-datepicker.css' %}">
-  <link rel="stylesheet" href="{% static 'sir/css/jquery.timepicker.css' %}">
-  <link rel="stylesheet" href="{% static 'sir/css/flaticon.css' %}">
-  <link rel="stylesheet" href="{% static 'sir/css/icomoon.css' %}">
-  <link rel="stylesheet" href="{% static 'sir/css/style.css' %}">
-  <script>
-    (function () {
-      $('a.nav-item ').on('click', function (e) {
-        e.preventDefault();
-        var $anchor = $(this);
-        $('html, body').stop().animate({
-          scrollTop: $($anchor.attr('href')).offset().top
-        }, 1500, 'easeInOutExpo');
-      });
-    }());
-  </script>
-</head>
+{% block staff %}
 
-<section class="ftco-section bg-light">
+<section class="bg-light page-section" id="team">
   <div class="container">
-    <div class="row justify-content-center mb-5 pb-3">
-      <div class="col-md-7 heading-section ftco-animate text-center">
-        <h2 class="mb-4">Our Experience Teacher's</h2>
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase">Our Amazing Staff</h2>
+        <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-4 mb-sm-4 ftco-animate">
-        <div class="staff">
-          <div class="d-flex mb-4">
-            <div class="img" style="background-image: url('{{STATIC_URL}} /static/sir/images/person_1.jpg');"></div>
-            <div class="info ml-4">
-              <h3><a href="teacher-single.html">Ivan Jacobson</a></h3>
-              <span class="position">CSE Teacher</span>
-              <p class="ftco-social d-flex">
-                <a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-twitter"></span></a>
-                <a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-facebook"></span></a>
-                <a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-instagram"></span></a>
-              </p>
-            </div>
-          </div>
-          <div class="text">
-            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name</p>
-          </div>
+
+      {% for list in teacher_list %}
+      <div class="col-sm-4">
+        <div class="team-member">
+          <img class="mx-auto rounded-circle" src="img/team/1.jpg" alt="">
+          <h4>{{ list.teacher_name }}</h4>
+          <p class="text-muted">{{ list.teacher_email }} <br> {{ list.teacher_qualification }}</p>
+          <ul class="list-inline social-buttons">
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
-      <div class="col-lg-4 mb-sm-4 ftco-animate">
-        <div class="staff">
-          <div class="d-flex mb-4">
-            <div class="img" style="background-image: url('{{STATIC_URL}} /static/sir/images/person_2.jpg');"></div>
-            <div class="info ml-4">
-              <h3><a href="teacher-single.html">Ivan Jacobson</a></h3>
-              <span class="position">CSE Teacher</span>
-              <p class="ftco-social d-flex">
-                <a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-twitter"></span></a>
-                <a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-facebook"></span></a>
-                <a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-instagram"></span></a>
-              </p>
-            </div>
-          </div>
-          <div class="text">
-            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name</p>
-          </div>
+      {% endfor %}
+
+<!--       
+      <div class="col-sm-4">
+        <div class="team-member">
+          <img class="mx-auto rounded-circle" src="img/team/2.jpg" alt="">
+          <h4>Larry Parker</h4>
+          <p class="text-muted">Lead Marketer</p>
+          <ul class="list-inline social-buttons">
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
-      <div class="col-lg-4 mb-sm-4 ftco-animate">
-        <div class="staff">
-          <div class="d-flex mb-4">
-            <div class="img" style="background-image: url('{{STATIC_URL}} /static/sir/images/person_3.jpg');"></div>
-            <div class="info ml-4">
-              <h3><a href="teacher-single.html">Ivan Jacobson</a></h3>
-              <span class="position">CSE Teacher</span>
-              <p class="ftco-social d-flex">
-                <a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-twitter"></span></a>
-                <a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-facebook"></span></a>
-                <a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-instagram"></span></a>
-              </p>
-            </div>
-          </div>
-          <div class="text">
-            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name</p>
-          </div>
+      <div class="col-sm-4">
+        <div class="team-member">
+          <img class="mx-auto rounded-circle" src="img/team/3.jpg" alt="">
+          <h4>Diana Pertersen</h4>
+          <p class="text-muted">Lead Developer</p>
+          <ul class="list-inline social-buttons">
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
-      <div class="col-lg-4 mb-sm-4 ftco-animate">
-        <div class="staff">
-          <div class="d-flex mb-4">
-            <div class="img" style="background-image: url('{{STATIC_URL}} /static/sir/images/person_4.jpg');"></div>
-            <div class="info ml-4">
-              <h3><a href="teacher-single.html">Ivan Jacobson</a></h3>
-              <span class="position">CSE Teacher</span>
-              <p class="ftco-social d-flex">
-                <a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-twitter"></span></a>
-                <a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-facebook"></span></a>
-                <a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-instagram"></span></a>
-              </p>
-            </div>
-          </div>
-          <div class="text">
-            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 mb-sm-4 ftco-animate">
-        <div class="staff">
-          <div class="d-flex mb-4">
-            <div class="img" style="background-image: url('{{STATIC_URL}} /static/sir/images/person_5.jpg');"></div>
-            <div class="info ml-4">
-              <h3><a href="teacher-single.html">Ivan Jacobson</a></h3>
-              <span class="position">CSE Teacher</span>
-              <p class="ftco-social d-flex">
-                <a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-twitter"></span></a>
-                <a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-facebook"></span></a>
-                <a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-instagram"></span></a>
-              </p>
-            </div>
-          </div>
-          <div class="text">
-            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 mb-sm-4 ftco-animate">
-        <div class="staff">
-          <div class="d-flex mb-4">
-            <div class="img" style="background-image: url('{{STATIC_URL}} /static/sir/images/person_6.jpg');"></div>
-            <div class="info ml-4">
-              <h3><a href="teacher-single.html">Ivan Jacobson</a></h3>
-              <span class="position">CSE Teacher</span>
-              <p class="ftco-social d-flex">
-                <a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-twitter"></span></a>
-                <a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-facebook"></span></a>
-                <a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-instagram"></span></a>
-              </p>
-            </div>
-          </div>
-          <div class="text">
-            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 mb-sm-4 ftco-animate">
-        <div class="staff">
-          <div class="d-flex mb-4">
-            <div class="img" style="background-image: url('{{STATIC_URL}} /static/sir/images/person_7.jpg');"></div>
-            <div class="info ml-4">
-              <h3><a href="teacher-single.html">Ivan Jacobson</a></h3>
-              <span class="position">CSE Teacher</span>
-              <p class="ftco-social d-flex">
-                <a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-twitter"></span></a>
-                <a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-facebook"></span></a>
-                <a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-instagram"></span></a>
-              </p>
-            </div>
-          </div>
-          <div class="text">
-            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 mb-sm-4 ftco-animate">
-        <div class="staff">
-          <div class="d-flex mb-4">
-            <div class="img" style="background-image: url('{{STATIC_URL}} /static/sir/images/person_8.jpg');"></div>
-            <div class="info ml-4">
-              <h3><a href="teacher-single.html">Ivan Jacobson</a></h3>
-              <span class="position">CSE Teacher</span>
-              <p class="ftco-social d-flex">
-                <a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-twitter"></span></a>
-                <a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-facebook"></span></a>
-                <a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-instagram"></span></a>
-              </p>
-            </div>
-          </div>
-          <div class="text">
-            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 mb-sm-4 ftco-animate">
-        <div class="staff">
-          <div class="d-flex mb-4">
-            <div class="img" style="background-image: url('{{STATIC_URL}} /static/sir/images/person_9.jpg');"></div>
-            <div class="info ml-4">
-              <h3><a href="teacher-single.html">Ivan Jacobson</a></h3>
-              <span class="position">CSE Teacher</span>
-              <p class="ftco-social d-flex">
-                <a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-twitter"></span></a>
-                <a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-facebook"></span></a>
-                <a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-instagram"></span></a>
-              </p>
-            </div>
-          </div>
-          <div class="text">
-            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name</p>
-          </div>
-        </div>
+    </div> -->
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center">
+        <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
       </div>
     </div>
   </div>
@@ -231,5 +100,4 @@
 
 
 
-
-<!-- {% endblock staff %} -->
+{% endblock staff %}

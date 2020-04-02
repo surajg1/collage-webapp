@@ -9,7 +9,6 @@ urlpatterns = [
     path('dashboard', views.HomeView.dashboard, name='dashboard'),
     path('about', views.HomeView.about, name='about'),
     path('staff', views.HomeView.staff, name='staff'),
-    path('teachers_manage', views.HomeView.teachers_manage, name='teachers_manage'),
     path('contact', views.HomeView.contact, name='contact'),
     path('course', views.HomeView.course, name='course'),
     path('ebook', views.HomeView.ebook, name='ebook'),
@@ -41,6 +40,12 @@ urlpatterns = [
     path('ebook_list', views.TeachersView.ebook_list, name='ebook_list'),
     path('ebook_create', views.TeachersView.ebook_create, name='ebook_create'),
     path('add_ebook', views.TeachersView.add_ebook, name = 'add_ebook'),
-    path('delete_ebook/<int:id>', views.TeachersView.delete_ebook, name='delete_ebook')
+    path('delete_ebook/<int:id>', views.TeachersView.delete_ebook, name='delete_ebook'),
+    
+    # Authentication
+    
+    path('att_user_login', views.Auth.att_user_login, name='att_user_login'),
+    path('teachers_manage', views.Auth.teachers_manage, name='teachers_manage'),
+    path('user_logout', views.Auth.user_logout, name='user_logout'),
     
 ]

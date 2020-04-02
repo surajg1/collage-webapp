@@ -64,6 +64,7 @@
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <!-- Messages Dropdown Menu -->
+      
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="far fa-comments"></i>
@@ -153,7 +154,15 @@
           <i class="fas fa-th-large"></i>
         </a>
       </li>
+
+      <li>
+        {% if request.session.TeacherLogin %}
+        <a href="/user_logout"><button class="btn btn-danger"> Logout </button></a>
+        {% endif %}
+      </li>
+
     </ul>
+
   </nav>
   <!-- /.navbar -->
 
@@ -174,7 +183,7 @@
           <img src="{{STATIC_URL}} /static/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="teachers_manage" class="d-block">Test Teachers</a>
+          <a href="teachers_manage" class="d-block">{{ request.session.user_name }}</a>
         </div>
       </div>
 
@@ -261,7 +270,7 @@
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
- 
+
   {% block dashboard %} {% endblock dashboard %}
   {% block notice_create %} {% endblock notice_create %}
   {% block notice_list %} {% endblock notice_list %}
@@ -317,3 +326,5 @@
 <script src="{{STATIC_URL}} /static/dist/js/demo.js"></script>
 </body>
 </html>
+
+</script>
