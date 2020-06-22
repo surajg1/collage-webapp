@@ -1,259 +1,199 @@
-{% extends "home/home.html" %}
 
-{% block about %}
+{% extends 'home/home.html' %}
 
-{% comment %} 
+{% block courses %}
+
 <!DOCTYPE html>
 <html lang="en">
-    {% load static %}
-<head>
-  <title>International Conference</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-
-  <link rel="stylesheet" href="{% static 'sir/css/open-iconic-bootstrap.min.css' %}">
-  <link rel="stylesheet" href="{% static 'sir/css/animate.css' %}">
-
-  <link rel="stylesheet" href="{% static 'sir/css/owl.carousel.min.css' %}">
-  <link rel="stylesheet" href="{% static 'sir/css/owl.theme.default.min.css' %}">
-  <link rel="stylesheet" href="{% static 'sir/css/magnific-popup.css' %}">
-
-  <link rel="stylesheet" href="{% static 'sir/css/aos.css' %}">
-
-  <link rel="stylesheet" href="{% static 'sir/css/ionicons.min.css' %}">
-
-  <link rel="stylesheet" href="{% static 'sir/css/bootstrap-datepicker.css' %}">
-  <link rel="stylesheet" href="{% static 'sir/css/jquery.timepicker.css' %}">
-
-
-  <link rel="stylesheet" href="{% static 'sir/css/flaticon.css' %}">
-  <link rel="stylesheet" href="{% static 'sir/css/icomoon.css' %}">
-  <link rel="stylesheet" href="{% static 'sir/css/style.css' %}">
-  
-  <style>
-    .pune
-  {
-    color: white;
-  }
-  .address
-  {
-    color:white;
-   
-  }
-  .special
-  {
-    color:white;
-    font-family: sans-serif;
-    font-weight: bold;
-    font-style: italic;
-  }
-  .welcome
-  {
-    color: black;
-    font-family: arial;
-    font-size:18px;
-     margin-left: 163px;
-   
-  }
-  .welcometext
-  {
-    word-wrap:break-word;
-    margin-left: 163px;
-    margin-top: -28px;
-    font-size: 21px;
-  
-  }
-  .aboutpdea
-  {
-   
-    word-wrap:inherits;
-    margin-left: 163px;
-    margin-top: -28px;
-    font-size: 21px;
-  
-  
-  }
-  #sharadpawar
-  {
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    margin-left: -885px;
-    margin-top: 9px;
-  }
-  #sharadpawartext
-  {
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 09px;
-    font-weight: bold;
-   margin-left: -888px;
-    margin-top: 11px; 
-  }
-  #ajitpawar
-  {
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    margin-left: -293px;
-    margin-top: -129px
-  }
-  #ajitpawartext
-  {
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 9px;
-    font-weight: bold;
-    margin-left: -289px;
-    margin-top: 15px;
-  }
-  #supriya
-  {
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    margin-left: 310px;
-    margin-top: -103px
-  }
-  #supriyatext
-  {
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 10px;
-    font-weight: bold;
-    margin-left: 296px;
-  }
-  #sunetra
-  {
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    margin-left: 700px;
-    margin-top: -114px;
-    margin-right: -208px;
-  }
-  #sunetratext
-  {
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 10px;
-    font-weight: bold;
-    margin-left: 721px;
-    margin-right: -159px;
-  }
-  .uniname
-  {
-    font-family: Arial;
-    color: gray;
-    font-size: 22px;
-    margin-right: 319px;
-    margin-left: -245px;
-  }
-  .pdeaname
-  {
-    font-family: Arial;
-    color: gray;
-    font-size: 22px;
-    margin-left: 181px;
-    margin-right: -319px;
-    margin-top: -65px;
-  }
-  .Chief-Patron
-  {
-    font-family: Arial;
+	{% load static %}
+  <head>
+    <title>Libro - Free Bootstrap 4 Template by Colorlib</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    font-size: 34px;
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'infra/css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'infra/css/animate.css' %}">
     
+    <link rel="stylesheet" href="{% static 'infra/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'infra/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'infra/css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'infra/css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'infra/css/ionicons.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'infra/css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'infra/css/jquery.timepicker.css' %}">
+
     
-  }
-  .t
-  {
-    color: white;
-  }
-  .event
-  {
-    color:grey;
-  }
-  #gholapimage
-  {
-   border-radius: 45px;
-   margin-left:67px;
-   
-  }
+    <link rel="stylesheet" href="{% static 'infra/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'infra/css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'infra/css/style.css' %}">
+  </head>
+  <body>
+<!-- 
+    <nav id="colorlib-main-nav" role="navigation">
+      <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle active"><i></i></a>
+      <div class="js-fullheight colorlib-table">
+        <div class="colorlib-table-cell js-fullheight">
+          <div class="row d-flex justify-content-end">
+            <div class="col-md-12 px-5">
+              <ul class="mb-5">
+                <li class="active"><a href="index.html"><span>Home</span></a></li>
+                <li><a href="fashion.html"><span>Fashion</span></a></li>
+                <li><a href="model.html"><span>Model</span></a></li>
+                <li><a href="travel.html"><span>Travel</span></a></li>
+                <li><a href="about.html"><span>About us</span></a></li>
+                <li><a href="contact.html"><span>Contact</span></a></li>
+              </ul>
+            </div>
+            <div class="col px-5 copyright">
+            	<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <br> | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    
+    <div id="colorlib-page">
+      <header>
+      	<div class="container-fluid">
+	        <div class="row no-gutters">
+	          <div class="col-md-12">
+	            <div class="colorlib-navbar-brand">
+	              <a class="colorlib-logo" href="index.html">Libro</a>
+	            </div>
+	            <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+	          </div>
+	        </div>
+        </div>
+      </header>
+ -->
+ 
+<!--   
+      <section class="ftco-fixed clearfix ">
+      	<div class="image js-fullheight float-left">
+      		<div class="home-slider owl-carousel js-fullheight">
+		        <div class="slider-item js-fullheight" style="background-image: url('{{STATIC_URL}} /static/infra/images/bg_1.jpg');">
+		          <div class="overlay"></div>
+		          <div class="container">
+		            <div class="row slider-text align-items-end" data-scrollax-parent="true">
+		              <div class="col-md-10 col-sm-12 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+		              	<p class="cat"><span>Fashion</span></p>
+		                <h1 class="mb-3" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Popular Lifestyle with Fashion &amp; Modeling</h1>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
 
-  
-</style>
+		        <div class="slider-item js-fullheight" style="background-image: url('{{STATIC_URL}} /static/infra/images/bg_2.jpg');">
+		          <div class="overlay"></div>
+		          <div class="container">
+		            <div class="row slider-text align-items-end" data-scrollax-parent="true">
+		              <div class="col-md-10 col-sm-12 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+		              	<p class="cat"><span>Model</span></p>
+		                <h1 class="mb-3" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Canadian Girl make your world go round</h1>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+      	</div> -->
 
-  </style>
+      	<div class="page-container m-2">
+      		<div class="row">
+      			<div class="col-md-12">
+                    
+	      			<div class="blog-entry-2 ftco-animate">
+	      				<a href="blog-single.html" class="blog-img d-flex justify-content-center align-items-center" style="background-image: url('{{STATIC_URL}} /static/images/department.jpg');">
+	      				</a>
+	      				<div class="d-flex">
+		      				<div class="meta pt-4">
+	                  <p>
+	                  	<span>Admin</span>
+	                  	<span><a href="#">July 29, 2018</a></span>
+	                  	<span><a href="#">Lifestyle</a></span>
+	                  	<span><a href="#">12 Comments</a></span>
+	                  </p>
+	                </div>
+		      				<div class="text p-5">
+		      					<h3 class="mb-4">The Big Oxmox advised her not to do so, because there</h3>
+		      					<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text.</p>
+		      				</div>
+	      				</div>
+                      </div>
+                      
+                      <div class="blog-entry-2 ftco-animate m-2">
+                        <a href="blog-single.html" class="blog-img d-flex justify-content-center align-items-center" style="background-image: url('{{STATIC_URL}} /static/images/department.jpg');">
+                        </a>
+                        <div class="d-flex">
+                            <div class="meta pt-4">
+                    <p>
+                        <span>Admin</span>
+                        <span><a href="#">July 29, 2018</a></span>
+                        <span><a href="#">Lifestyle</a></span>
+                        <span><a href="#">12 Comments</a></span>
+                    </p>
+                  </div>
+                            <div class="text p-5">
+                                <h3 class="mb-4">The Big Oxmox advised her not to do so, because there</h3>
+                                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text.</p>
+                            </div>
+                        </div>
+                    </div>
 
-  <script>
-    (function () {
-      $('a.nav-item ').on('click', function (e) {
-        e.preventDefault();
-        var $anchor = $(this);
-        $('html, body').stop().animate({
-          scrollTop: $($anchor.attr('href')).offset().top
-        }, 1500, 'easeInOutExpo');
-      });
-    }());
-  </script>
-</head>
- {% endcomment %}
+                    <div class="blog-entry-2 ftco-animate">
+                        <a href="blog-single.html" class="blog-img d-flex justify-content-center align-items-center" style="background-image: url('{{STATIC_URL}} /static/images/department.jpg');">
+                        </a>
+                        <div class="d-flex">
+                            <div class="meta pt-4">
+                    <p>
+                        <span>Admin</span>
+                        <span><a href="#">July 29, 2018</a></span>
+                        <span><a href="#">Lifestyle</a></span>
+                        <span><a href="#">12 Comments</a></span>
+                    </p>
+                  </div>
+                            <div class="text p-5">
+                                <h3 class="mb-4">The Big Oxmox advised her not to do so, because there</h3>
+                                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text.</p>
+                            </div>
+                        </div>
+                    </div>
+	      		
+      			</div>
+      		</div>
+      
+      	</div><!-- end: page-container-->
+      </section>
+    	
+		  <!-- loader -->
+		  <div id="ftco-loader" class="show fullscreen">
+		  	<svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg>
+		  </div>
 
- <div class="t"   id="x">pf</div>
-  <div class="welcome container" align="justify"><br><br>
-  <h3><b>Computer Science Department:</b></h3>
-  </div><br>
-  <div class="welcometext  container"  align="justify">
-    <b>Aim:</b> To create an ability to analyze a problem,identify and define the computing requirements appropriate to its solutions.
-    <br>
-    <br>
-    <b>Objective:</b> To include  knowledge in core of computer science areas of computer science,including the theoretical foundations and fundaments
-    knowledge useful in the rapidly changing softwares and computing industry.To embark on lifelong learning for personal and professional growth.
-    <br><br>
-    <b>Highlights:</b> The computer science department conducted social responsible programme(SSR) in coordination with Quick heal foundation for cyber awareness programme,
-    organized "Skill & Employablity enhancement" program in coorporation with NASSCOM & SAP labs,pre placement activities.
-    The computer science department also hosts an intercollege compitation named 'S-CAPTCHA'.
-    <br>
-    <b></b>
-  </div>
-  </div>
+  	</div>
 
+  <script src="{{STATIC_URL}} /static/infra/js/jquery.min.js"></script>
+  <script src="{{STATIC_URL}} /static/infra/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="{{STATIC_URL}} /static/infra/js/popper.min.js"></script>
+  <script src="{{STATIC_URL}} /static/infra/js/bootstrap.min.js"></script>
+  <script src="{{STATIC_URL}} /static/infra/js/jquery.easing.1.3.js"></script>
+  <script src="{{STATIC_URL}} /static/infra/js/jquery.waypoints.min.js"></script>
+  <script src="{{STATIC_URL}} /static/infra/js/jquery.stellar.min.js"></script>
+  <script src="{{STATIC_URL}} /static/infra/js/owl.carousel.min.js"></script>
+  <script src="{{STATIC_URL}} /static/infra/js/jquery.magnific-popup.min.js"></script>
+  <script src="{{STATIC_URL}} /static/infra/js/aos.js"></script>
+  <script src="{{STATIC_URL}} /static/infra/js/jquery.animateNumber.min.js"></script>
+  <script src="{{STATIC_URL}} /static/infra/js/scrollax.min.js"></script>
+  <script src="{{STATIC_URL}} /static/infra/js/bootstrap-datepicker.js"></script>
+  <script src="{{STATIC_URL}} /static/infra/js/jquery.timepicker.min.js"></script>
+  <script src="{{STATIC_URL}} /static/infra/js/main.js"></script>
+    
+  </body>
+</html>
 
-<br><br>  
-  <div class="aboutpdea container"  id="about" align="justify">
-    <h3><b>Pune District Education Association :</b></h3>
-    Pune District Education Association (PDEA) is well known educational society founded by the
-      dedicated team of social reformers lead by Late Shri. Baburaoji Gholap and has a standing of over 77 years in the
-      field of education. PDEA has received the prestigious, “Best Educational Institute Award” in the year 2000 by the
-      Government of Maharashtra for the remarkable achievements in the field of education and social work. PDEA imparts
-      education to rural and urban masses through Preprimary Schools (12), Primary Schools (13) Secondary Schools (55),
-      Subsidiary School (06), Higher Secondary Schools (29), Senior Colleges (08), Ayurved College and Research Center
-      (01), Pharmacy Colleges (02), Management Institutes (02), Polytechnic Institute (01), Engineering College (01),
-      Law College (01), Architecture (01) and D.Ed. College (01).
-      In the year 2006, inspired visionary and dynamic leader, Honorable Shri. Ajit Pawar took the charge as President
-      of PDEA. Under his able guidance, all branches of PDEA’s are now taking a global speed to reach the destination.
-<br><br>
-
-  <h3><b>Baburaoji Gholap College :</b></h3>
-    Baburaoji Gholap College runs 16 undergraduate courses and 11 postgraduate courses under the faculties of Arts,
-    Commerce, Science, Computer Science and Computer Application. In addition to conventional courses, there are 5 B.Voc. Degree courses in Fashion
-    Technology, Software Development, Beauty Therapy and Aesthetics, Retail Management and Travel and Tourism
-    Management. College also offers ‘Diploma in Rubber Chemistry and Processing’ under UGC Community College Scheme.
-    There are four Ph.D. Research centers in Economics, Physics, Chemistry and Environmental Science wherein 9 have
-    been awarded with Ph.D. since 2012 and 106 students are currently pursuing their doctoral degree. An excellent
-    ‘Sophisticated Instrumental Analysis Facility Centre (SIAFC)’ Laboratory for research activities is set up. The
-    college received general development assistance from UGC, New Delhi and also funded with DBT-Star college scheme
-    and DST-FIST scheme. Recently, college is selected for Unnant Bharat Abhiyan Scheme of UGC, New Delhi.<h3 id="scope"></h3>
-    The college is recipient of the ‘Best College Award’ by Savitribai Phule Pune University in 2010; and first prize
-    for “Jagar Janivancha” activity at University level by Government of Maharashtra in 2013 and 2014.<br><br>
-    </div>
-  
-  
-{% endblock about %}
+{% endblock courses %}

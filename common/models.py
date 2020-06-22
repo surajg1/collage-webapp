@@ -28,5 +28,9 @@ class Ebook(models.Model):
     ebook_name = models.CharField(max_length = 200)
     link = models.CharField(max_length = 200)
     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
-    
- 
+
+class Timetable(models.Model):
+    class_name = models.CharField(max_length = 200)
+    link = models.CharField(max_length = 200)
+    date = models.DateField()
+    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)

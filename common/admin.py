@@ -6,10 +6,12 @@ from  .models import Teacher
 from .models import Slink
 from .models import Notice
 from .models import Ebook
+from .models import Timetable
 
 admin.site.register(Admin)
 admin.site.register(Teacher)
 admin.site.register(Slink)
 admin.site.register(Notice)
 admin.site.register(Ebook)
+admin.site.register(Timetable)
 

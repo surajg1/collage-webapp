@@ -213,7 +213,6 @@ body{
   .Chief-Patron
   {
     font-family: Arial;
-    
     font-size: 34px;
     
     
@@ -236,7 +235,7 @@ body{
 h15{
     position: relative;
     font-size:4rem;
-    color:  brown;
+    color:  #f43a09;
     margin: 1rem;
     font-family: serif;
 }
@@ -255,11 +254,19 @@ h15{
 }
 
 .paragraph{
-  font-family: cursive;
+  font-family: Round, sans-serif;
   font-size: 35px;
   margin-left: 5px;
-  color: rgb(148, 138, 138);
-}  
+  color: #ff1d58;
+} 
+
+  .my-word{
+    font-family: Round, sans-serif;
+    font-size: 35px;
+    margin-left: 5px;
+    color: #bf4aa8;
+  }
+
 .whole{
   font-family: 'Times New Roman', Times, serif;
   font-size: 20px;
@@ -268,8 +275,9 @@ h15{
 
 footer{
   position: relative;
-  bottom: 0rem;
-  width: 100%;
+  left:0px;
+  bottom:0;
+  width:100%;
 }
 .my_login{
   position: relative;
@@ -277,11 +285,10 @@ footer{
   padding: 0%;
   margin: 0em;
   height: 600px;
-
 }
 
 .login-form{
-   position: relative;
+  position: relative;
   width: 360px;
   background: #f1f1f1;
   height: 500px;

@@ -1,0 +1,43 @@
+{% extends 'teachers_dashboard/index.html' %}
+
+{% block notice_create %}
+<div class="content-wrapper ">
+
+<section class="content add_teacher">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-6">
+          <!-- general form elements -->
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">Add Time-Table</h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form action="add_timetable" method="POST">
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Class</label>
+                  <input type="text" name="class_name" class="form-control" id="exampleInputEmail1" placeholder="eg. Fy-BSc">
+                </div>
+               
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Link</label>
+                    <input type="text"  name="timetable_link"  class="form-control" id="exampleInputEmail1" placeholder="eg. https://www.google.com/exam_timetable">
+                  </div>
+
+                <div class="form-group">
+                   <label for="exampleInputEmail1">Date</label>
+                   <input type="date"  name="timetable_date"  class="form-control" id="exampleInputEmail1" placeholder="eg. https://www.google.com/exam_timetable">
+                 </div>
+               <!-- /.card-body -->
+
+              <div class="card-footer text-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+          </div>
+          <!-- /.card -->
+
+  {% endblock notice_create %}

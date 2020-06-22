@@ -5,6 +5,7 @@ from  .models import Admin
 from .models import Slink
 from .models import Notice
 from .models import Ebook
+from .models import Timetable
 
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponseRedirect
@@ -29,6 +30,9 @@ class HomeView:
     def about(request):
         return render(request,'home/About_us.html')
 
+    def events(request):
+        return render(request,'home/event.html')
+
     def staff(request):
         teacher_list = Teacher.objects.all()
         return render(request,'home/Staff.html',{
@@ -41,6 +45,9 @@ class HomeView:
     def course(request):
         return render(request,'home/course.html')
 
+    def infrastructure(request):
+        return render(request, 'home/infrastructure.html')
+
     def ebook(request):
         ebooks = Ebook.objects.all()
         return render(request,'student-corner/ebook.html',{
@@ -52,6 +59,12 @@ class HomeView:
         return render(request,'student-corner/s-link-course.html',{
             "slink_list" : slink_list
         })
+
+    def student_timetable(request):
+        timetable = Timetable.objects.all()
+        return render(request,'student-corner/student-timetable.html',{
+            "timetable" : timetable
+        })        
 
 
 
@@ -246,7 +259,38 @@ class TeachersView:
     def delete_ebook(request, id):
         Ebook.objects.get(id= id).delete()
         return HttpResponseRedirect("/ebook_list")
-    
+
+    def timetable_create(request):
+         Login = request.session['TeacherLogin']
+         if(Login == 'False'):
+            return HttpResponseRedirect("/user_login")
+         else:
+            return render(request,'student-corner/timetable_create.html')
+
+    @csrf_exempt
+    def add_timetable(request):
+        class_name = request.POST['class_name']
+        timetable_link = request.POST['timetable_link']
+        timetable_date = request.POST['timetable_date']
+        teachers_id = Teacher.objects.get(teacher_name = request.session['user_name']);
+        Timetable.objects.create(class_name = class_name, link = timetable_link, date = timetable_date,teacher = teachers_id )
+        return HttpResponseRedirect("/timetable_list")
+
+    def timetable_list(request):
+         timetable_list = Timetable.objects.all()
+         Login = request.session['TeacherLogin']
+         if(Login == 'False'):
+            return HttpResponseRedirect("/user_login")
+         else:
+            return render(request,'teachers_dashboard/timetable_list.html',{
+            "time" : timetable_list
+         })
+        
+    def delete_timetable(request, id):
+        Timetable.objects.get(id= id).delete()
+        return HttpResponseRedirect("/timetable_list")
+
+
 class Auth:
     @csrf_exempt
     def att_user_login(request):

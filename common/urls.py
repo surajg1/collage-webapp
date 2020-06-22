@@ -14,6 +14,10 @@ urlpatterns = [
     path('ebook', views.HomeView.ebook, name='ebook'),
     path('slinkcourse', views.HomeView.slinkcourse, name='slinkcourse' ),
     path('user_login', views.HomeView.login, name='login'),
+    path('student_timetable', views.HomeView.student_timetable, name='student_timetable'),
+    path('infrastructure', views.HomeView.infrastructure, name= 'infrastructure'),
+    path('events', views.HomeView.events, name= 'events'),
+
     
     # Admin dashboard routes
     
@@ -41,6 +45,11 @@ urlpatterns = [
     path('ebook_create', views.TeachersView.ebook_create, name='ebook_create'),
     path('add_ebook', views.TeachersView.add_ebook, name = 'add_ebook'),
     path('delete_ebook/<int:id>', views.TeachersView.delete_ebook, name='delete_ebook'),
+    path('delete_timetable/<int:id>', views.TeachersView.delete_timetable, name='delete_timetable'),
+    path('timetable_create', views.TeachersView.timetable_create, name='timetable_create'),
+    path('add_timetable', views.TeachersView.add_timetable, name='add_timetable'),
+    path('timetable_list', views.TeachersView.timetable_list, name='timetable_list'),
+
     
     # Authentication
     
